@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+		<meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+        <title>Under stand Fxied Income ETFs</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <meta name="description" content="Slideshow with jmpress.js" />
+        <meta name="keywords" content="jmpress, slideshow, container, plugin, jquery, css3" />
+        <meta name="author" content="for Codrops" />
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:700,300,300italic' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" type="text/css" href="../dist/css/demo.css" />
+        <link rel="stylesheet" type="text/css" href="../dist/css/style.css" />
+
+        <link rel="stylesheet" type="text/css" href="../dist/css/dndTree.css" />
+        <link rel="stylesheet" type="text/css" href="../dist/css/c3.css" />
+        <link rel="stylesheet" type="text/css" href="../dist/css/app.css" />
+
+		<!--[if lt IE 9]>
+		<link rel="stylesheet" type="text/css" href="css/style_ie.css" />
+		<![endif]-->
+		<!-- jQuery -->
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+		<!-- jmpress plugin -->
+		<script type="text/javascript" src="../dist/js/jmpress.min.js"></script>
+		<!-- jmslideshow plugin : extends the jmpress plugin -->
+		<script type="text/javascript" src="../dist/js/jquery.jmslideshow.js"></script>
+		<script type="text/javascript" src="../dist/js/modernizr.custom.48780.js"></script>
+		<script src="http://d3js.org/d3.v3.min.js"></script>
+		<script type="text/javascript" src="../dist/js/c3.min.js"></script>
+		
+
+
+		<noscript>
+			<style>
+			.step {
+				width: 100%;
+				position: relative;
+			}
+			.step:not(.active) {
+				opacity: 1;
+				filter: alpha(opacity=99);
+				-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(opacity=99)";
+			}
+			.step:not(.active) a.jms-link{
+				opacity: 1;
+				margin-top: 40px;
+			}
+
+			</style>
+		</noscript>
+    </head>
+    <body>
+        <div class="container">
+			<header>
+				<h1>Understand <span>Fixed Income ETFs</span></h1>
+				<h2>SOMETIMES YOU NEED TO ACT FAST. <span>WE GET THAT.</span></h2>
+			</header>
+			<section id="jms-slideshow" class="jms-slideshow">
+				<div class="step" data-color="color-1">
+					
+					<div class="jms-content">
+						<h3>The Basics</h3>
+						<p>Most fixed income ETFs track market indices that follow targeted segments of the markets, such as US Treasury, high yield, or emerging market bonds. Institutional investors primarily use fixed income ETFs as core long-term investment holdings, tools for targeting precision exposures, and as financial instruments that serve as substitutes or complements to derivatives.</p>
+						<a class="jms-link" href="#">Read more</a>
+					</div>
+					<div class="animation-charts" id="tree-container"></div>
+					
+
+				</div>
+				<div class="step" data-color="color-2" data-y="500" data-scale="0.4" data-rotate-x="30">
+                
+					<div class="jms-content">
+						<h3>Flexibility</h3>
+						<h4>ETFs enable a variety of broad and targeted exposures.</h4>
+						<p>Fixed income ETFs give you access to hundreds of cash bonds in a single trade, and enable you to create highly customized solutions by targeting specific fixed income sectors. With ETFs, you can increase or decrease exposures to target sectors more quickly than you could otherwise do in the OTC bond or derivative markets.</p>
+						<a class="jms-link" href="#">Read more</a>
+					</div>
+					<div class="animation-charts"><div id="donut-chart"></div></div>
+
+				</div>
+				<div class="step" data-color="color-3" data-x="2000" data-z="3000" data-rotate="170">
+					<div class="jms-content">
+						<h3>Liquidity</h3>
+						<h4>ETFs can offer an additional source of liquidity for fixed income investors.</h4>
+						<p>The growth of the fixed income ETF market has helped create a new source of liquidity for bond investors, above and beyond what you can access in the OTC market. With fixed income ETFs, you effectively get an additional trading venue—the stock exchange—where shares can be transferred among investors without relying on the OTC market.</p>
+						<a class="jms-link" href="#">Read more</a>
+					</div>
+					<div class="animation-charts"><div id="timeseries-chart"></div></div>
+				</div>
+
+				<div class="step" data-color="color-4" data-x="3000">
+					<div class="jms-content">
+						<h3>Cost-Effectiveness</h3>
+						<h4>ETFs may provide bond investors with significant cost savings</h4>
+						<p>iShares ETFs generally offer price improvement, making the ETF less expensive to trade than a comparable portfolio of bonds. Relative to a basket of bonds, ETFs offer the benefit of on-exchange liquidity, which often results in lower transaction costs.</p>
+						<a class="jms-link" href="#">Read more</a>
+					</div>
+					<div class="animation-charts"><div id="bar-chart"></div></div>
+				</div>
+				<div class="step" data-color="color-5" data-x="4500" data-z="1000" data-rotate-y="45">
+					<div class="jms-content">
+						<h3>Efficiency</h3>
+						<h4>ETFs help overcome the challenges of the OTC market</h4>
+						<p>Because ETFs are traded on a centralized exchange, they allow investors to see execution prices throughout the day. With ETFs, fixed income investors have full transparency into trading volumes, pricing, and transaction costs, making them valuable tools for navigating stressed markets.</p>
+						<a class="jms-link" href="#">Read more</a>
+					</div>
+					<div class="animation-charts"><div id="direct-graph"></div></div>
+				</div>
+			</section>
+        </div>
+		<script type="text/javascript">
+			$(function() {
+			
+				$( '#jms-slideshow' ).jmslideshow();
+				
+			});
+
+		</script>
+ 
+
+ 	<script type="text/javascript" src="../dist/js/dndTree.js"></script>
+ 	<script type="text/javascript" src="../dist/js/donut.js"></script>
+ 	<script type="text/javascript" src="../dist/js/timeseries.js"></script>
+ 	<script type="text/javascript" src="../dist/js/bar.js"></script>
+    <script type="text/javascript" src="../dist/js/app.js"></script>
+
+
+    </body>
+</html>
