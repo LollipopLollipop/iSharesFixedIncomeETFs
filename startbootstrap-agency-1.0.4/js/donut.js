@@ -9,8 +9,12 @@ var chart = c3.generate({
 	},
     data: {
         columns: [
-            ['data1', 30],
-            ['data2', 120],
+            ['MBS', 28.9],
+            ['CRED', 29.5],
+            ['SHY', 14.6],
+            ['IEI', 13.2],
+            ['CRED', 29.5],
+            ["CMBS", 13.8],
         ],
         type : 'donut',
         onclick: function (d, i) { console.log("onclick", d, i); },
@@ -18,7 +22,7 @@ var chart = c3.generate({
         onmouseout: function (d, i) { console.log("onmouseout", d, i); }
     },
     donut: {
-        title: "Iris Petal Width"
+        title: "iShares AGG"
     }
 });
 
