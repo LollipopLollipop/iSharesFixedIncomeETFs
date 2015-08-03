@@ -34,7 +34,7 @@
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
     <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <!--<link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>-->
     <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Raleway:200,400,800' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:700,300,300italic' rel='stylesheet' type='text/css'>
@@ -77,19 +77,19 @@
 
     <!-- Header -->
     <header>
-        <div class="container  demo-1">
-            <div class="content">
+        <div class="demo-1">
+            
                 <div id="large-header" class="large-header">
                     <canvas id="demo-canvas"></canvas>
                     <h1 class="main-title">Fixed income ETFs <span class="thin">to fit your investment needs</span></h1>
                 </div>
-            </div>
+            
         </div><!-- /container -->
     </header>
 
 
     <!-- Portfolio Grid Section -->
-    <section id="portfolio" class="bg-light-gray">
+    <section id="portfolio" class="bg-light-gray" id="education"><a name="education"></a>
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
@@ -109,7 +109,8 @@
                     <div class="jms-content">
                         <h3>The Basics</h3>
                         <p>Most fixed income ETFs track market indices that follow targeted segments of the markets, such as US Treasury, high yield, or emerging market bonds. Institutional investors primarily use fixed income ETFs as core long-term investment holdings, tools for targeting precision exposures, and as financial instruments that serve as substitutes or complements to derivatives.</p>
-                        <a class="jms-link" href="#">Read more</a>
+                        <br><br>
+                        <button type="button" class="btn btn-primary" onclick="window.location.replace('pages/dashboard.html')">Learn More</button>
                     </div>
                     <div class="animation-charts" id="tree-container"></div>
                     
@@ -120,8 +121,8 @@
                     <div class="jms-content">
                         <h3>Flexibility</h3>
                         <h4>ETFs enable a variety of broad and targeted exposures.</h4>
-                        <p>Fixed income ETFs give you access to hundreds of cash bonds in a single trade, and enable you to create highly customized solutions by targeting specific fixed income sectors. With ETFs, you can increase or decrease exposures to target sectors more quickly than you could otherwise do in the OTC bond or derivative markets.</p>
-                        <a class="jms-link" href="#">Read more</a>
+                        <p>Fixed income ETFs give you access to hundreds of cash bonds in a single trade, and enable you to create highly customized solutions by targeting specific fixed income sectors. With ETFs, you can increase or decrease exposures to target sectors more quickly than you could otherwise do in the OTC bond or derivative markets.</p><br><br>
+                        <button type="button" class="btn btn-primary" onclick="window.location.replace('pages/dashboard.html')">Learn More</button>
                     </div>
                     <div class="animation-charts"><div id="donut-chart"></div></div>
 
@@ -131,7 +132,8 @@
                         <h3>Liquidity</h3>
                         <h4>ETFs can offer an additional source of liquidity for fixed income investors.</h4>
                         <p>The growth of the fixed income ETF market has helped create a new source of liquidity for bond investors, above and beyond what you can access in the OTC market. With fixed income ETFs, you effectively get an additional trading venue—the stock exchange—where shares can be transferred among investors without relying on the OTC market.</p>
-                        <a class="jms-link" href="#">Read more</a>
+                        <br><br>
+                        <button type="button" class="btn btn-primary" onclick="window.location.replace('pages/dashboard.html')">Learn More</button>
                     </div>
                     <div class="animation-charts"><div id="timeseries-chart"></div></div>
                 </div>
@@ -141,7 +143,8 @@
                         <h3>Cost-Effectiveness</h3>
                         <h4>ETFs may provide bond investors with significant cost savings</h4>
                         <p>iShares ETFs generally offer price improvement, making the ETF less expensive to trade than a comparable portfolio of bonds. Relative to a basket of bonds, ETFs offer the benefit of on-exchange liquidity, which often results in lower transaction costs.</p>
-                        <a class="jms-link" href="#">Read more</a>
+                        <br><br>
+                        <button type="button" class="btn btn-primary" onclick="window.location.replace('pages/dashboard.html')">Learn More</button>
                     </div>
                     <div class="animation-charts"><div id="bar-chart"></div></div>
                 </div>
@@ -150,7 +153,8 @@
                         <h3>Efficiency</h3>
                         <h4>ETFs help overcome the challenges of the OTC market</h4>
                         <p>Because ETFs are traded on a centralized exchange, they allow investors to see execution prices throughout the day. With ETFs, fixed income investors have full transparency into trading volumes, pricing, and transaction costs, making them valuable tools for navigating stressed markets.</p>
-                        <a class="jms-link" href="#">Read more</a>
+                        <br><br>
+                        <button type="button" class="btn btn-primary" onclick="window.location.replace('pages/dashboard.html')">Learn More</button>
                     </div>
                     <div class="animation-charts"><div id="direct-graph"></div></div>
                 </div>
@@ -175,7 +179,7 @@
                 </div>
             </div>
             <div class="row text-center">
-                <div class="col-md-4">
+                <div class="col-md-4" id="preTradeTool">
                     <span class="fa-stack fa-4x">
                         <i class="fa fa-circle fa-stack-2x text-primary"></i>
                         <i class="fa  fa-signal fa-stack-1x fa-inverse"></i>
@@ -183,7 +187,7 @@
                     <h4 class="service-heading">Pre-Trade Tool</h4>
                     <p class="text-muted">Helps clients better understand ETF liquidity to trade more effectively.</p>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-4" id="intrinsicValTool">
                     <span class="fa-stack fa-4x">
                         <i class="fa fa-circle fa-stack-2x text-primary"></i>
                         <i class="fa fa-laptop fa-stack-1x fa-inverse"></i>
@@ -192,7 +196,7 @@
                     <p class="text-muted">Intraday intrinsic value pricing for underlying bond and international equity exposures
                     </p>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-4" id="customTool">
                     <span class="fa-stack fa-4x">
                         <i class="fa fa-circle fa-stack-2x text-primary"></i>
                         <i class="fa fa-lock fa-stack-1x fa-inverse"></i>
@@ -201,7 +205,7 @@
                     <p class="text-muted">Self-select and filter the data to customize what you need.</p>
                 </div>
             </div><br><br><br><br>
-            <button type="button" class="btn btn-primary" onclick="window.location.replace('../startbootstrap-sb-admin-2-1.0.7/pages/index.html')">Learn More</button>
+            <button type="button" class="btn btn-primary" onclick="window.location.replace('pages/dashboard.html')">Learn More</button>
         </div>
     </section>
 
@@ -215,7 +219,7 @@
                     <h2 class="section-heading">Resources</h2>
 
                     <h3 class="section-subheading text-muted">Welcome to the Fixed Income Professionals Resource Portal, your information source for fixed income ETF investing. </h3>
-                    <button type="button" class="btn btn-primary" onclick="window.location.replace('../startbootstrap-sb-admin-2-1.0.7/pages/index.html')">Learn More</button>
+                    <button type="button" class="btn btn-primary" onclick="window.location.replace('pages/dashboard.html')">Learn More</button>
                 </div>
             </div>
             <div class="row">
@@ -291,7 +295,7 @@
                     <br>
                     <h2 class="section-heading">Use ETFs for Liquidity</h2>
                     <h3 class="section-subheading text-muted">Fixed income ETFs to fit your investment needs. </h3>
-                    <button type="button" class="btn btn-primary" onclick="window.location.replace('../startbootstrap-sb-admin-2-1.0.7/pages/index.html')">Learn More</button>
+                    <button type="button" class="btn btn-primary" onclick="window.location.replace('pages/dashboard.html')">Learn More</button>
                 </div>
             </div>
             <div class="row">
@@ -670,6 +674,15 @@
 			$(function() {
 			
 				$( '#jms-slideshow' ).jmslideshow();
+				$('#preTradeTool').click(function(){
+   					window.location.replace('paegs/preTrade.html');
+				});
+				$('#intrinsicValTool').click(function(){
+   					window.location.replace('pages/intrinsicVal.html');
+				});
+				$('#customTool').click(function(){
+   					window.location.replace('pages/custom.html');
+				});
 				
 			});
 
