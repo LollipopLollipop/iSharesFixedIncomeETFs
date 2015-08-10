@@ -378,13 +378,19 @@
                                             <tr><td>size</td></tr>
                                         </table>
                                         
-                                        <div id="anothercriteriaTbl" style="display:none; ">
-                                            <div class="row"></div>
-                                            <div class="row"></div>
-                                            <div class="row"></div>
-                                            <div class="row"></div>
-                                            <div class="row"></div>
-                                            <div class="row"><button id="selectBtn" onclick="doSelect();">Select</button></div>
+                                        <div id="anothercriteriaTbl" style="display:none; " >
+                                            <div class="row">
+                                            &nbsp&nbsp Time: <input type="text"> to <input type="text"></div>
+                                            <div class="row">
+                                            &nbsp&nbsp Weighted <input type="checkbox"></div>
+                                            <div class="row">&nbsp&nbsp Grouped By Sector <input type="checkbox"></div>
+                                            <div class="row">&nbsp&nbsp Currency USD <input type="checkbox"></div>
+                                            <div class="row">&nbsp&nbsp Currency EUR <input type="checkbox"></div>
+                                            <div class="row">&nbsp&nbsp Currency CAD <input type="checkbox"></div>
+                                            <div class="row">&nbsp&nbsp Currency RMB <input type="checkbox"></div>
+                                            <div class="row">&nbsp&nbsp
+                                            <button id="selectBtn" onclick="doSelect();" class="btn btn-primary">
+                                            Select</button></div>
                                             
                                         </div>
                                     </div>
@@ -400,7 +406,7 @@
                                         Selected Data Fields
                                     </div>
                                     <div class="panel-body">
-                                        <div id="selectedDataFields">
+                                        <div id="selectedDataFields" style="height:200px">
                                             
                                         </div>
                                     </div>
@@ -423,16 +429,17 @@
                             <div class="row">
                                 <div class="panel panel-default">
                                     <div class="panel-heading">
-                                        Selected Data Fields
+                                        Processing Data Fields
                                     </div>
                                     <div class="panel-body">
-                                        <input type="text">
+                                        
+                                        <textarea class="form-control" rows="8"></textarea>
                                     </div>
                                 </div>
                             </div>
                             
                             <div class="row">
-                                <button id="exeBtn" onclick="alert('Execution Completed')">Execute</button>
+                                <button id="exeBtn" onclick="alert('Execution Completed')" class="btn btn-primary">Execute</button>
                             </div>
                             
                             
@@ -465,23 +472,20 @@
                                     <div class="panel-heading">
                                         Criteria
                                     </div>
-                                    <div class="panel-body" id="criteriaTxt"  style="overflow:auto;">
-                                        <table id="criteriaTbl" class="table table-hover table-striped" style="display:none; ">
-                                            <tr><td>basket</td></tr>
-                                            <tr><td>bidask</td></tr>
-                                            <tr><td>size</td></tr>
-                                        </table>
-                                        
-                                        <div id="anothercriteriaTbl" style="display:none; ">
-                                            <div class="row"></div>
-                                            <div class="row"></div>
-                                            <div class="row"></div>
-                                            <div class="row"></div>
-                                            <div class="row"></div>
-                                            <div class="row"><button id="selectBtn" onclick="doSelect();">Select</button></div>
-                                            
-                                        </div>
-                                    </div>
+                                    <div class="panel-body"  style="overflow:auto;">
+                                    <div id="visCriteria" style="display:none;">
+                                        <div class="row">
+                                            &nbsp&nbsp Time: <input type="text"> to <input type="text"></div>
+                                            <div class="row">
+                                            &nbsp&nbsp Target <select><option value="">HYG</option>
+  											<option value="">LQD</option>
+  											<option value="">Ratio</option>
+  											</select>
+                                           	</div>
+                                            <div class="row">&nbsp&nbsp
+                                            <button id="visBtn" onclick="doSelect();" class="btn btn-primary pull-right">
+                                            Visualize</button></div>
+                                    </div></div>
                                     
                                 </div>
                                 
@@ -491,12 +495,16 @@
                             <div class="row">
                                 <div class="panel panel-default">
                                     <div class="panel-heading">
-                                        Selected Data Fields
+                                        Visualization Fields
                                     </div>
                                     <div class="panel-body">
-                                        <div id="selectedDataFields">
-                                            
-                                        </div>
+                                        <div class="flot-chart">
+                                        <div class="flot-chart-content" id="flot-line-chart" style="display:none;"></div>
+                            			<div class="flot-chart-content" id="flot-pie-chart" style="display:none;"></div>
+                                		<div class="flot-chart-content" id="flot-line-chart-multi" style="display:none;"></div>
+                                			<div class="flot-chart-content" id="flot-line-chart-moving" style="display:none;"></div>
+                                			
+                            			</div>
                                     </div>
                                 </div>
                             </div>
@@ -539,15 +547,23 @@
     $('#searchTxt').keydown(function (e){
         if(e.keyCode == 13){
             //$('#searchTxt').val('');
-            $('#descripTxt').html('<h4>iShares iBoxx $ High Yield Corporate Bond ETF</h4><img src="../img/HYG.PNG">');
+			if($('#searchTxt').val().indexOf("hyg") > -1){
+            	$('#descripTxt').html('<h4>iShares iBoxx $ High Yield Corporate Bond ETF</h4><img src="../img/HYG-small.PNG">');
+			}
+			else{
+				$('#descripTxt').html('<h4>iShares iBoxx $ Investment Grade Corporate Bond ETF</h4><img src="../img/LQD-small.PNG">');
+			}
+					
             //$('#criteriaTxt').html('<table id="criteriaTbl" class="table table-hover table-striped"><tr><td>basket</td></tr><tr><td>bidask</td></tr><tr><td>size</td></tr></table>');
-            $('#criteriaTbl').css("display", "block");
+            $('#anothercriteriaTbl').css("display", "none");
+			$('#criteriaTbl').css("display", "block");
         }
     });   
     
     $('#visSearchTxt').keydown(function (e){
         if(e.keyCode == 13){
-            $('#visDescripTxt').html('<h2>Timeseries:</h2><h4>Displaying datat with a horizontal axis of timeseries.</h4>')
+            $('#visDescripTxt').html('<h3>Timeseries:</h3><h4>A time series is a sequence of data points, typically consisting of successive measurements made over a time interval. </h4>');
+			$('#visCriteria').css("display", "block");
         }
     });
     
@@ -562,30 +578,23 @@
     } );
     
     
-    $('#basketBtn').click(function(){
-        alert("hi");
-        $('#descripTxt').append('<h2>basket</h2>');
-        $('#criteriaTxt').html('<ul><li>start date:<input type="text"></li><li>end date:<input type="text"></li></ul>');
+    
+	$('#visBtn').click(function(){
+        $('#flot-line-chart-moving').css("display","block");
     });
+	
         
-    $('#execute').click(function(){
-
-        
-        $('#datatable').hide();
-        $('#hiddenChart').css('display','block');
-
-            
-
-    });
-    $("#show").click(function(){
-            $('#hiddenChart').hide();
-           $('#hiddenPie').show(); 
-
-        });
+    
     
     function doSelect(){
-        alert("hi");
-        $('#selectedDataFields').html('<h4>#1 ETF.HYG.basket(weighted=True)</h4>');
+		//alert('hi');
+		if($('#selectedDataFields').html().indexOf('HYG')>-1){
+			//alert('hihi');
+			$('#selectedDataFields').append('<h4>#1 ETF.LQD.basket(weighted=True)</h4>');
+		}
+        else{
+			$('#selectedDataFields').html('<h4>#1 ETF.HYG.basket(weighted=True)</h4>');
+		}
     }
     </script>
 

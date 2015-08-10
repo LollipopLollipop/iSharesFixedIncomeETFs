@@ -1,6 +1,6 @@
 // Get JSON data
 //treeJSON = d3.json("flare.json", function(error, treeData) {
-	var treeData = JSON.parse('{"name": "FIXED INCOME ETFs","children": [{"name": "BOND ETF FEATURES","children": [{"name": "EXCHANGE LISTED LIKE A STOCK","size": 3938}, {"name": "DIVERSIFIED LIKE A PORTFOLIO OF BONDS","size": 3416}]}, {"name": "PRIMARY USES","children": [{"name": "CORE INVESTMENTS","size": 3938}, {"name": "PRECISION EXPOSURES","size": 3416}, {"name": "FINANCIAL INSTRUMENTS","size": 3416}]}]}');
+	var treeData = JSON.parse('{"name": "FIXED INCOME ETFs","children": [{"name": "BOND ETF FEATURES","children": [{"name": "EXCHANGE LISTED","size": 3938}, {"name": "DIVERSIFIED","size": 3416}]}, {"name": "PRIMARY USES","children": [{"name": "CORE INVESTMENTS","size": 3938}, {"name": "PRECISION EXPOSURES","size": 3416}, {"name": "FINANCIAL INSTRUMENTS","size": 3416}]}]}');
     // Calculate total nodes, max label length
     var totalNodes = 0;
     var maxLabelLength = 0;
@@ -16,7 +16,7 @@
     var root;
 
     // size of the diagram
-    var viewerWidth = 360;
+    var viewerWidth = 400;
     var viewerHeight = 360;
 
     var tree = d3.layout.tree()
